@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://hibernate.sourceforge.net/dtd/hibernate-mapping-5.0.3.dtd"> 
+ 
+<hibernate-mapping>
+  <class name="com.hbm.beans.Users" table="users">
+   <id name="id" type="int" column="ID" >
+   <generator class="increment"/>
+  </id>
+ 
+  <property name="name">
+    <column name="name" />
+  </property>
+    <property name="mobileno">
+    <column name="mobileno" />
+  </property>
+  <property name="emailid">
+    <column name="emailid" />
+  </property>
+  <property name="password">
+    <column name="password"/>
+  </property>
+ </class>
+</hibernate-mapping>
