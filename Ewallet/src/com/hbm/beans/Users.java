@@ -6,14 +6,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-@Entity
+@Entity(name="Users")
 @Table(name="users")
 
 public class Users {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
-	private String name,mobileno,emailid,password;
+	public int id;
+public String name,mobileno,emailid,password;
 	public int getId() {
 		return id;
 	}

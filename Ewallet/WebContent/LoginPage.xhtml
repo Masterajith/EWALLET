@@ -13,19 +13,19 @@
 <title>welcome to Ewallet</title>
 </h:head>
 <h:body>
-
+<div align="left" >
 <h:form>
         <table>
             <tr>
                 <td><label>Name</label></td>
-                <td><h:inputText id="name" value="#{UserMB.name}" required="true" requiredMessage="Please enter your name" ></h:inputText></td>
+                <td><h:inputText id="name" value="#{UserMB.name}" required="true" requiredMessage="Please enter your name" validatorMessage="Please enter name"></h:inputText></td>
                 <td><h:message for="name" style="color:red" /></td>  
             </tr>
             <tr>
                 <td><label>E-mail Id</label></td>
                 <td>
                    
-                <h:inputText id="emailid" value="#{UserMB.emailid}" required="true" requiredMessage="Please enter your emailid" >></h:inputText>
+                <h:inputText id="emailid" value="#{UserMB.emailid}" required="true" requiredMessage="Please enter your emailid" validatorMessage="Please enter emailid"></h:inputText>
               
                 </td>
                   <td><h:message for="emailid" style="color:red" /></td>
@@ -34,7 +34,7 @@
                 <td><label>Mobile No</label></td>
                 <td>
                 
-                <h:inputText id="mobileno" value="#{UserMB.mobileno}" required="true" requiredMessage="Please enter your mibileno" ></h:inputText>
+                <h:inputText id="mobileno" value="#{UserMB.mobileno}" required="true" requiredMessage="Please enter your mibileno" validatorMessage="Please enter mobileno"></h:inputText>
             
                 </td>
                   <td><h:message for="mobileno" style="color:red" /></td>
@@ -43,7 +43,7 @@
                 <td><label>Password</label></td>
                 <td>
                 
-                <h:inputSecret id="password" value="#{UserMB.password}" required="true" requiredMessage="Please enter your name"></h:inputSecret>
+                <h:inputSecret id="password" value="#{UserMB.password}" required="true" requiredMessage="Please enter your name" validatorMessage="Please enter password" />
                 
                 </td>
                   <td><h:message for="password" style="color:red" /></td>
@@ -64,6 +64,41 @@
         </table>
  
     </h:form>
+    </div>
+    <div align="right" >
+    <h:form>
+     <table>
+    <tr>
+                <td><label>E-mail Id</label></td>
+                <td>
+                   
+                <h:inputText id="loginemailid" value="#{UserMB.loginemailid}" required="true" requiredMessage="Please enter your emailid" validatorMessage="Please enter emailid"></h:inputText>
+              
+                </td>
+                  <td><h:message for="loginemailid" style="color:red" /></td>
+        </tr>
+        <tr>
+                <td><label>Password</label></td>
+                <td>
+                
+                <h:inputSecret id="loginpassword" value="#{UserMB.loginpassword}" required="true" requiredMessage="Please enter your name" validatorMessage="Please enter password"></h:inputSecret>
+                
+                </td>
+                  <td><h:message for="loginpassword" style="color:red" /></td>
+            </tr>
+             <tr>
+                <td colspan="2"><p:commandButton
+                        action="#{UserMB.validate()}" value="SignIn" >
+                        <f:param value="#{UserMB.loginemailid}"></f:param>
+                       <f:param value="#{UserMB.loginpassword}"></f:param>
+                       
+                        </p:commandButton>
+                </td>
+            </tr>
+           
     
+    </table>
+    </h:form>
+    </div>
 </h:body>
 </html>

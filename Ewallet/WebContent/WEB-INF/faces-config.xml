@@ -10,12 +10,19 @@
  <managed-bean-scope>request</managed-bean-scope>
  </managed-bean>
  <navigation-rule>
-   <from-view-id>LoginPage1.xhtml</from-view-id>
+   <from-view-id>LoginPage.xhtml</from-view-id>
    <navigation-case>
       <from-action>#{UserMB.save}</from-action>
-      <from-outcome>LoginPage1</from-outcome>
-      <to-view-id>LoginPage1.jsf</to-view-id>
+       <from-outcome>LoginPage</from-outcome>
+      <to-view-id>LoginPage.jsf</to-view-id>
    </navigation-case>
-   
+   <navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/success.xhtml</to-view-id>
+					</navigation-case>
+			<navigation-case>
+				<from-outcome>fail</from-outcome>
+			<to-view-id>/fail.xhtml</to-view-id>
+			</navigation-case>
 </navigation-rule>
 </faces-config>
